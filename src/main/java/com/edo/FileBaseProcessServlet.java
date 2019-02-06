@@ -44,7 +44,6 @@ public abstract class FileBaseProcessServlet extends HttpServlet {
 
     protected boolean processUpload(final Part part, FileDetails fileDetails)throws ServletException, IOException {
 
-//        final Part part = request.getPart("file");
         boolean pass = true;
         OutputStream outputStream = null;
         InputStream filecontent = null;

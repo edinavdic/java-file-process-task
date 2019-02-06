@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>File Upload</title>
+
+        <style>
+            body {background: linear-gradient(to right, rgba(179,220,237,1) 0%, rgba(117,215,245,1) 22%, rgba(117,215,245,1) 79%, rgba(188,224,238,1) 100%);}
+            h1 {font-family: Bahnschrift SemiCondensed; font-size: 50px; horiz-align: center; }
+            h2 {font-family: Bahnschrift; font-weight: 600; horiz-align: center;}
+            h3 {font-family: Bahnschrift; font-weight: 600; horiz-align: center;}
+            .main{text-align: center; align-content: center; padding-top: 25vh;}
+            .box-upload {border: 3px solid white;border-radius: 5px;display: inline-block; padding-top: 5px; padding-bottom: 15px; margin: 35px; width: 35%; align-content: center;}
+            .button1 {border-radius: 8px; font-size: 14px;}
+            .button2 {border-radius: 8px; font-size: 14px;}
+        </style>
+
+    </head>
+
+    <body>
+        <div class="main">
+            <h1>FILE PROCESS JAVA WEBAPP</h1>
+
+            <div class="box-upload">
+                <h2> Choose .comp File to Upload in Server </h2>
+                <form action="compressedfileprocess" method="post" enctype="multipart/form-data">
+                    <input class="button1" type="file" name="file"/>
+                    <input class="button2" type="submit" value="Upload .comp"/>
+                </form>
+            </div>
+
+            <div class="box-upload">
+                <h2> Choose .txt File to Upload in Server </h2>
+                <form action="txtfileprocess" method="post" enctype="multipart/form-data">
+                    <input class="button1" type="file" name="file"/>
+                    <input class="button2" type="submit" value="upload .txt"/>
+                </form>
+            </div>
+        </div>
+    </body>
+
+</html>

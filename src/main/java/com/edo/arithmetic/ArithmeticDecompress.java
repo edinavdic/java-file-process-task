@@ -48,8 +48,8 @@ public class ArithmeticDecompress {
     }
 
 
-    // To allow unit testing, this method is package-private instead of private.
-    static FrequencyTable readFrequencies(BitInputStream in) throws IOException {
+
+    private static FrequencyTable readFrequencies(BitInputStream in) throws IOException {
         int[] freqs = new int[257];
         for (int i = 0; i < 256; i++)
             freqs[i] = readInt(in, 32);
@@ -58,8 +58,8 @@ public class ArithmeticDecompress {
     }
 
 
-    // To allow unit testing, this method is package-private instead of private.
-    static void decompress(FrequencyTable freqs, BitInputStream in, OutputStream out) throws IOException {
+
+    private static void decompress(FrequencyTable freqs, BitInputStream in, OutputStream out) throws IOException {
         ArithmeticDecoder dec = new ArithmeticDecoder(32, in);
         while (true) {
             int symbol = dec.read(freqs);

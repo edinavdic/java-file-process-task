@@ -16,7 +16,7 @@ public class ArithmeticCompress {
     public static void run(String inFilePath, String outFilePath, byte[] crcBytes) throws IOException {
 
         if(crcBytes.length != 8){
-            System.err.println("Invalid crc poslan za kompresiju");
+            System.err.println("Invalid crc poslan");
             return;
         }
 
@@ -71,15 +71,13 @@ public class ArithmeticCompress {
     }
 
 
-    // To allow unit testing, this method is package-private instead of private.
-    static void writeFrequencies(BitOutputStream out, FrequencyTable freqs) throws IOException {
+    private static void writeFrequencies(BitOutputStream out, FrequencyTable freqs) throws IOException {
         for (int i = 0; i < 256; i++)
             writeInt(out, 32, freqs.get(i));
     }
 
 
-    // To allow unit testing, this method is package-private instead of private.
-    static void compress(FrequencyTable freqs, InputStream in, BitOutputStream out) throws IOException {
+    private static void compress(FrequencyTable freqs, InputStream in, BitOutputStream out) throws IOException {
         ArithmeticEncoder enc = new ArithmeticEncoder(32, out);
         while (true) {
             int symbol = in.read();
